@@ -1,4 +1,5 @@
-//inserimento mainForm
+window.addEventListener("load", function(){
+  //inserimento mainForm
 var mainForm = document.getElementById("mainForm");
 
 mainForm.addEventListener("submit", function (event) {
@@ -65,4 +66,5 @@ mainForm.addEventListener("submit", function (event) {
 
 //funzione di reset DA PERFEZIONARE
 mainForm.addEventListener("reset", function () {
+})
 })
