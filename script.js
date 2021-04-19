@@ -1,70 +1,67 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
   //inserimento mainForm
-var mainForm = document.getElementById("mainForm");
+  var mainForm = document.getElementById("mainForm");
 
-mainForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+  mainForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  //creazione delle variabili 
-  var nomeUtenteElement = document.getElementById("nomeUtente");
+    //creazione delle variabili 
+    var nomeUtenteElement = document.getElementById("nomeUtente");
 
-  var kmDaFareElement = document.getElementById("kmDaFare");
+    var kmDaFareElement = document.getElementById("kmDaFare");
 
-  var ageElement = document.getElementById("age");
+    var ageElement = document.getElementById("age");
 
-  var nomeUtente = nomeUtenteElement.value;
+    var nomeUtente = nomeUtenteElement.value;
 
-  var kmDaFare = kmDaFareElement.value;
+    var kmDaFare = kmDaFareElement.value;
 
-  var age = ageElement.value;
+    var age = ageElement.value;
 
-  var scontistica = "";
+    var scontistica = "";
 
-  //condizione if per applicazione scontistica
-  if (age == "adulto") {
-    scontistica = "Nessuna scontistica applicata";
-  } else if (age == "minorenne") {
-    scontistica = "Sconto minorenne -20%";
-  } else {
-    scontistica = "Sconto over65 -40% "
-  }
+    document.getElementById("passengerName").innerHTML = nomeUtente;
 
-  //funzione per calcolo prezzo biglietto 
-  function ticketPrice(myAge, kmDaFare) {
-    if (myAge == "over65") {
-      return ((0.21 * kmDaFare) - ((0.21 * kmDaFare) * 0.40)).toFixed(2)
+    //condizione if per applicazione scontistica
+    if (age == "adulto") {
+      scontistica = "Nessuna scontistica applicata";
+    } else if (age == "minorenne") {
+      scontistica = "Sconto minorenne -20%";
+    } else {
+      scontistica = "Sconto over65 -40% "
     }
-    if (myAge == "adulto") {
-      return (0.21 * kmDaFare).toFixed(2)
+    document.getElementById("scontistica").innerHTML = scontistica;
+
+    //funzione per calcolo prezzo biglietto 
+    function ticketPrice(myAge, kmDaFare) {
+      if (myAge == "over65") {
+        return ((0.21 * kmDaFare) - ((0.21 * kmDaFare) * 0.40)).toFixed(2)
+      }
+      if (myAge == "adulto") {
+        return (0.21 * kmDaFare).toFixed(2)
+      }
+      if (myAge == "minorenne") {
+        return ((0.21 * kmDaFare) - ((0.21 * kmDaFare) * 0.20)).toFixed(2)
+      }
     }
-    if (myAge == "minorenne") {
-      return ((0.21 * kmDaFare) - ((0.21 * kmDaFare) * 0.20)).toFixed(2)
+    document.getElementById("ticketPrice").innerHTML = (ticketPrice(age, kmDaFare));
+
+
+    //creazione funzione per calcolo numero random 9000 - 100000
+    function randomCp() {
+      return Math.ceil(Math.random() * 10000) + 90000
     }
-  }
+    document.getElementById("CpCod").innerHTML = randomCp();
 
-  //creazione funzione per calcolo numero random 9000 - 100000
-  function randomCp() {
-    return Math.ceil(Math.random() * 10000) + 90000
-  }
 
-  //creazione funzione per numero random da 1 a 30
-  function randomCarrozza() {
-    return Math.ceil(Math.random() * 30)
-  }
+    //creazione funzione per numero random da 1 a 30
+    function randomCarrozza() {
+      return Math.ceil(Math.random() * 30)
+    }
+    document.getElementById("carrozzaName").innerHTML = randomCarrozza();
 
-  //stampa su html
-  document.getElementById("passengerName").innerHTML = nomeUtente;
-
-  document.getElementById("carrozzaName").innerHTML = randomCarrozza();
-
-  document.getElementById("scontistica").innerHTML = scontistica;
-
-  document.getElementById("CpCod").innerHTML = randomCp();
-
-  document.getElementById("ticketPrice").innerHTML = (ticketPrice(age, kmDaFare));
-})
-
-//funzione di reset DA PERFEZIONARE
-mainForm.addEventListener("reset", function () {
-})
+    //funzione di reset
+    mainForm.addEventListener("reset", function () {
+    })
+  })
 })
