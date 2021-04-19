@@ -64,6 +64,10 @@ body {
   margin-top: 50px;
 }
 
+.button_down :active {
+  background-color: chartreuse;
+}
+
 .price {
   margin: auto;
   width: 90%;
@@ -94,10 +98,6 @@ body {
   font-weight: 900;
 }
 
-.gray_background {
-  background-color: gray;
-}
-
 .wrapper h2 {
   font-size: 20px;
 }
@@ -114,3 +114,6 @@ body {
   transform: translateX(-50%);
 }
 
+.gray_background {
+  background-color: gray;
+}
