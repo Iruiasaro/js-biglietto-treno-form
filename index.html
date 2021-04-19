@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Treno Biglietto Form</title>
+</head>
+
+<body>
+
+    <header class="wrapper container">
+        <h1 class="white_text text_align">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    </header>
+    <main>
+        <div class="container text_align rettangolo_bianco wrap">
+
+            <form action="" id="myform">
+                <div class="monitor">
+                    <p class="text_color">Nome Cognome</p>
+                    <input id="nomeUtente">
+                </div>
+                <div class="monitor">
+                    <p class="text_color">Km da percorrere</p>
+                    <input id="kmDaFare">
+                </div>
+                <div class="monitor">
+                    <p class="text_color">Fascia d'età</p>
+                    <select id="age">
+                        <option>minorenne</option>
+                        <option>maggiorenne</option>
+                        <option>over65</option>
+                    </select>
+                </div>
+                <div class="button_down">
+                    <button class="button_white_sx">GENERA</button>
+                    <button class="button_white_dx" type="reset">ANNULLA</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="wrapper container">
+            <h1 class="white_text text_align">IL TUO BIGLIETTO</h1>
+        </div>
+
+        <div class="container rettangolo_bianco wrapper">
+            <div class="price">
+                <h2> DETTAGLIO PASSEGGERI</h2>
+            </div>
+            <div class="price flex_display">
+                <div class="column text_align gray_background wrapper">
+                    <h2> Nome <br> Passeggero</h2>
+                    <p class="allineamento" id="passengerName"></p>
+                </div>
+                <div class="column text_align wrapper">
+                    <h2>Offerta</h2>
+                    <p class="allineamento" id="scontistica"></p>
+                </div>
+                <div class="column text_align wrapper">
+                    <h2>Carrozza</h2>
+                    <p class="allineamento" id="carrozzaName"></p>
+                </div>
+                <div class="column text_align wrapper">
+                    <h2>Codice <br> CP</h2>
+                    <p class="allineamento" id="CpCod"></p>
+                </div>
+                <div class="column text_align wrapper">
+                    <h2>Costo <br> Biglietto €</h2>
+                    <p class="allineamento" id="ticketPrice"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
